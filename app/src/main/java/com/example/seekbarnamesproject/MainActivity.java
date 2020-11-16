@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -33,8 +34,10 @@ String []names;
     private SeekBar.OnSeekBarChangeListener sklistener=new SeekBar.OnSeekBarChangeListener() {
         @Override
         public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-          int num=rnd.nextInt(names.length);
-          tv1.setText(names[num]);
+         // int num=rnd.nextInt(names.length);
+        //  tv1.setText(names[num]);
+            int n=seekBar.getProgress();
+            tv1.setText(names[n]);
         }
 
         @Override
@@ -44,6 +47,8 @@ String []names;
 
         @Override
         public void onStopTrackingTouch(SeekBar seekBar) {
+
+
 
         }
     };
